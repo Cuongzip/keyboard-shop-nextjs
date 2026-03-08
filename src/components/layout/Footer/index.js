@@ -1,4 +1,4 @@
-const classNames = require("classnames/bind");
+import classNames from "classnames/bind";
 
 import styles from "./Footer.module.css";
 const cx = classNames.bind(styles);
