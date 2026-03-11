@@ -13,7 +13,7 @@ export default function Layout({ children }) {
         <html lang="vi">
             <body cz-shortcut-listen="true">
                 <Header />
-                <main>{children}</main>
+                <main className="container main">{children}</main>
                 <Footer />
             </body>
         </html>

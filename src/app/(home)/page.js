@@ -1,8 +1,11 @@
 import { getBanners, getProducts } from "@/services";
+
+import { Banner } from "./components";
 export default async function Home() {
     const banners = await getBanners();
-    const products = await getProducts();
-
-    console.log(products);
-    return <>Home</>;
+    return (
+        <>
+            <Banner data={banners} />
+        </>
+    );
 }

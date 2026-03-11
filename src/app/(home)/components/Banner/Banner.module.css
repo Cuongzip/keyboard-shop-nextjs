@@ -1,0 +1,114 @@
+.carousel {
+    margin-bottom: 50px;
+}
+.main {
+    display: flex;
+}
+.content {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+    flex: 1;
+}
+
+.label {
+    display: block;
+    font-size: 2.8rem;
+    color: var(--text-muted);
+    animation: zoomOut 0.55s ease forwards;
+    opacity: 0;
+}
+.subTitle {
+    display: block;
+    font-size: 4.5rem;
+    font-weight: 400;
+    margin-top: 25px;
+    animation: zoomOut 0.55s ease 0.15s forwards;
+    opacity: 0;
+}
+.name {
+    font-size: 6rem;
+    font-weight: 700;
+    margin: 30px 0;
+    animation: zoomOut 0.55s ease 0.3s forwards;
+    opacity: 0;
+}
+@keyframes zoomOut {
+    from {
+        opacity: 0;
+        transform: scale(1.5) translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.btns {
+    display: flex;
+    gap: 20px;
+}
+.carouselBtn {
+    padding: 12px 30px;
+    font-size: 1.8rem;
+}
+
+.banner {
+    position: relative;
+    overflow: hidden;
+    flex: 1.9;
+    aspect-ratio: 5/ 3;
+}
+.banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    animation: zoomIn 0.7s ease 0.6s forwards;
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.7);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+.actions {
+    display: flex;
+    justify-self: center;
+    gap: 30px;
+}
+.action {
+    padding: 5px 8px;
+    cursor: pointer;
+    height: 50px;
+}
+
+.action:hover {
+    transform: scale(1.5);
+}
+
+@media (max-width: 739px) {
+    .main {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .content {
+        order: 2;
+        text-align: center;
+    }
+    .btns {
+        margin: 0 auto;
+    }
+    .actions {
+        display: none;
+    }
+    .banner {
+        touch-action: pan-y;
+    }
+}
