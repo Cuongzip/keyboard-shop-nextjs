@@ -1,0 +1,174 @@
+.mainBox {
+    display: flex;
+    border-radius: 30px;
+    box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.12);
+    margin-top: 30px;
+}
+
+.form {
+    flex: 1;
+    padding: 50px 30px;
+}
+
+.formTitle {
+    font-size: 3.5rem;
+    font-weight: 700;
+}
+
+.formSubtitle {
+    color: var(--secondary-text-color);
+}
+
+.formSeparate {
+    display: flex;
+    align-items: center;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.separateText {
+    margin: 0 6px;
+}
+
+.formSeparate::after,
+.formSeparate::before {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.formBtns {
+    display: flex;
+    gap: 20px;
+}
+
+.formLink {
+    flex: 1;
+}
+
+.formBtn {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding: 6px 0;
+    width: 100%;
+    font-size: 1.4rem;
+}
+
+.formBtn:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.formBtn img {
+    width: 25px;
+    height: 25px;
+    margin-left: 14px;
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5px;
+}
+
+.formGroup label {
+    margin-bottom: 12px;
+}
+
+.formGroup input {
+    padding: 8px 10px;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    color: var(--text-muted);
+}
+
+.formGroupRow {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.formGroupRow label {
+    margin: 0;
+    color: var(--secondary-text-color);
+    font-size: 1.5rem;
+}
+
+.formSubmitBtn {
+    width: 100%;
+    background-color: var(--accent-color);
+    color: var(--white);
+    padding: 10px 0;
+    border-radius: 10px;
+    font-size: 1.6rem;
+}
+
+.formSubmitBtn:hover {
+    background-color: var(--accent-hover);
+}
+
+.formMessageError {
+    color: red;
+    line-height: 23px;
+    height: 23px;
+    font-size: 1.5rem;
+}
+
+.formTail {
+    display: flex;
+}
+
+.formTail a {
+    color: var(--accent-color);
+}
+
+.banner {
+    flex: 1.2;
+    overflow: hidden;
+    border-radius: 30px;
+    position: relative;
+}
+
+.banner::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.bannerImg {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+}
+
+.banner:hover .bannerImg {
+    transform: scale(1.2);
+}
+
+.bannerText {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2.8rem;
+    line-height: 40px;
+    font-weight: 500;
+    color: var(--white);
+    z-index: 9;
+}
+
+@media (max-width: 810px) {
+    .banner {
+        display: none;
+    }
+
+    .form {
+        padding: 30px 20px;
+    }
+}

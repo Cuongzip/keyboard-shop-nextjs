@@ -1,0 +1,23 @@
+.switchesHead,
+.keycapsHead {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.switchesHead a,
+.keycapsHead a {
+    gap: 10px;
+}
+.switchesHead a:hover,
+.keycapsHead a:hover {
+    color: var(--accent-color);
+}
+
+.featuredProducts {
+    margin: 80px 0;
+}
+
+.featuredProductsSubtitle {
+    font-size: 2rem;
+    color: var(--secondary-text-color);
+}

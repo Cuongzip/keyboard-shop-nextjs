@@ -1,0 +1,59 @@
+.descTab {
+    line-height: 22px;
+    height: 500px;
+    overflow: hidden;
+    position: relative;
+}
+
+.descTab ul {
+    list-style-type: disc;
+}
+
+.descTab img {
+    width: 100%;
+}
+
+.descTab:has(#toggleSeeMore:checked) .seeMoreBtn {
+    display: none;
+}
+
+.descTab:has(#toggleSeeMore:checked) .summaryBtn {
+    display: block;
+}
+
+.summaryBtn {
+    display: none;
+}
+#toggleSeeMore {
+    display: none;
+}
+
+.seeMoreBtn {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9;
+}
+
+.descTab::after {
+    position: absolute;
+    content: "";
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 150px;
+    background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0) 17%,
+        #fff 93.12%
+    );
+}
+
+.descTab:has(#toggleSeeMore:checked)::after {
+    display: none;
+}
+
+.descTab:has(#toggleSeeMore:checked) {
+    height: auto;
+}

@@ -1,0 +1,71 @@
+.carousel {
+    touch-action: pan-y;
+    position: relative;
+}
+
+.viewport {
+    width: 100%;
+    margin: 25px auto;
+    overflow: hidden;
+}
+.track {
+    display: flex;
+    flex-wrap: nowrap;
+    transition: transform ease 0.8s;
+    gap: 20px;
+}
+
+.pagination {
+    display: flex;
+    width: fit-content;
+    gap: 8px;
+    margin: 0 auto;
+}
+.paginationItem {
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background-color: rgb(152, 150, 150);
+    transition: width ease 0.3s;
+    cursor: pointer;
+}
+
+.paginationItemActive {
+    width: 40px;
+    border-radius: 20px;
+    background-color: var(--primary-color);
+}
+
+.action {
+    background-color: var(--white);
+    border: 1px solid var(--border-color);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    font-size: 1.7rem;
+}
+.action:hover {
+    background-color: var(--accent-color);
+    color: var(--white);
+}
+.actionDisable {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+.actionDisable:hover {
+    background-color: var(--white);
+    color: var(--black);
+}
+.actionPrev {
+    left: 0;
+    transform: translate(-50%, -50%);
+}
+.actionNext {
+    right: 0;
+    transform: translate(50%, -50%);
+}

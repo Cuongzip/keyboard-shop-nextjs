@@ -43,6 +43,8 @@
 
 * {
     box-sizing: border-box;
+    padding: 0;
+    margin: 0;
 }
 
 body {
@@ -168,12 +170,12 @@ b {
     background-color: var(--accent-color);
     color: white;
 }
-.button--outline {
+.buttonOutline {
     border: 1px solid var(--primary-color);
     color: var(--primary-text-color);
     background-color: var(--white);
 }
-.button--outline:hover {
+.buttonOutline:hover {
     background-color: var(--accent-color);
     color: var(--bg-color);
     border-color: var(--accent-color);

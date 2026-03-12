@@ -1,0 +1,49 @@
+.checkbox {
+    --checkbox-size: 22px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.checkbox:hover .checkboxTile {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+}
+
+.checkboxInput {
+    display: none;
+}
+
+.checkboxTile {
+    position: relative;
+    width: var(--checkbox-size);
+    height: var(--checkbox-size);
+    background-color: #ffffff;
+    border: 2px solid var(--border-color);
+    border-radius: 4px;
+    transition: all 0.2s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.checkboxIcon {
+    display: none;
+    font-size: 1.4rem;
+    color: var(--white);
+}
+
+.checkboxInput:checked ~ .checkboxTile {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+.checkboxInput:checked ~ .checkboxTile .checkboxIcon {
+    display: flex;
+}
+
+.checkboxInput:checked ~ .checkboxLabel {
+    color: var(--accent-color);
+}

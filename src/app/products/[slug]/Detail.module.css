@@ -1,0 +1,123 @@
+/* product detail : start*/
+.productDetail {
+    display: flex;
+    gap: 35px;
+}
+
+@media (max-width: 900px) {
+    .productDetail {
+        flex-direction: column;
+    }
+}
+
+.productDetailInfo {
+    flex: 1;
+}
+
+.productStateBar {
+    display: flex;
+    align-items: center;
+}
+
+.productEvaluate {
+    display: flex;
+}
+
+.productStars {
+    display: flex;
+}
+
+.productName {
+    font-size: 3rem;
+    line-height: 35px;
+    font-weight: 700;
+}
+
+.productStars {
+    font-size: 1.4rem;
+    color: #f59e0b;
+    margin-right: 8px;
+}
+
+.productSeparate {
+    display: block;
+    width: 1px;
+    height: 16px;
+    background-color: var(--border-color);
+}
+
+.productPrice {
+    display: block;
+    margin: 15px 0 20px 0;
+    font-weight: 700;
+    font-size: 2.6rem;
+}
+.productOriginPrice {
+    text-decoration: line-through;
+    color: var(--text-muted);
+}
+
+.productOptions {
+    display: flex;
+    gap: 15px;
+}
+
+.productLabel span:last-child {
+    font-weight: 500;
+}
+
+.productGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.productGroupRow {
+    flex-direction: row;
+}
+
+.productOption label {
+    cursor: pointer;
+}
+
+.productOptions input {
+    display: none;
+}
+
+.productOptionsColor img {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--border-color);
+    transition: all ease 0.3s;
+}
+
+.productOptionsColor .productOption:hover img,
+.productOptionsColor input:checked + label img {
+    border-color: rgb(105, 104, 104);
+    padding: 4px;
+}
+
+.productOptionsBtn label {
+    padding: 13px 20px;
+    border: 2px solid var(--border-color);
+    border-radius: 10px;
+    font-weight: 500;
+}
+
+.productOptionsBtn label:hover,
+.productOptionsBtn .productOption:has(input:checked) label {
+    border-color: var(--primary-color);
+}
+
+.buyNowBtn,
+.addToCartBtn {
+    width: 100%;
+    border-radius: 15px;
+}
+
+.buyNowBtn {
+    background-color: var(--primary-color);
+    padding: 15px 0;
+}
+/* product detail : end*/

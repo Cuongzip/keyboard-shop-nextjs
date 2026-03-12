@@ -1,11 +1,68 @@
-import { getBanners, getProducts } from "@/services";
+import classNames from "classnames/bind";
+import Link from "next/link";
 
-import { Banner } from "./components";
+import { getBanners, getProducts } from "@/services";
+import { Banner, Gallery, Benefits, Articles } from "./components";
+import { Carousel, Reveal } from "@/components";
+import styles from "./Home.module.css";
+
+export const dynamic = "force-dynamic";
+
+const cx = classNames.bind(styles);
+
 export default async function Home() {
     const banners = await getBanners();
+    const keycaps = await getProducts("type=keycap");
+    const switches = await getProducts("type=switch");
+    const featured = await getProducts("featured=true");
+
     return (
         <>
             <Banner data={banners} />
+            <section className={cx("keycaps")}>
+                <Reveal>
+                    <div className={cx("keycapsHead", "mb-2")}>
+                        <h2 className={cx("title")}>Keycaps</h2>
+                        <Link className={cx("center")} href="/products/keycaps">
+                            <span>Xem thêm</span>
+                            <i className="fi fi-rr-arrow-small-right"></i>
+                        </Link>
+                    </div>
+                </Reveal>
+                <Carousel data={keycaps} />
+            </section>
+            <section className={cx("switches", "mt-3")}>
+                <Reveal>
+                    <div className={cx("switchesHead", "mb-2")}>
+                        <h2 className={cx("title")}>Switches</h2>
+                        <Link
+                            className={cx("center")}
+                            href="/products/switches"
+                        >
+                            <span>Xem thêm</span>
+                            <i className="fi fi-rr-arrow-small-right"></i>
+                        </Link>
+                    </div>
+                </Reveal>
+                <Carousel data={switches} />
+            </section>
+            <section className={cx("featuredProducts")}>
+                <div className={cx("mb-3 text-center")}>
+                    <Reveal>
+                        <h2 className={cx("title mb-3")}>Sản phẩm nổi bật</h2>
+                    </Reveal>
+                    <Reveal>
+                        <span className={cx("featuredProductsSubtitle")}>
+                            Tuyển chọn những sản phẩm được yêu thích nhất
+                        </span>
+                    </Reveal>
+                </div>
+                <Carousel data={featured} />
+            </section>
+            <Benefits />
+            <Articles />
+
+            <Gallery />
         </>
     );
 }

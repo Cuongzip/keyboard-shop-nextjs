@@ -29,9 +29,9 @@ export default function Header() {
         >
             <Sidebar>
                 <Sidebar.Trigger>
-                    <div className={cx("triggerSidebar")}>
+                    <button className={cx("triggerSidebar")}>
                         <i className="fi fi-br-menu-burger"></i>
-                    </div>
+                    </button>
                 </Sidebar.Trigger>
                 <Sidebar.Content>
                     <div className={cx("sidebar")}>

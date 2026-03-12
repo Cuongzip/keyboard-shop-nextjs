@@ -1,5 +1,5 @@
 "use client";
-import { useState, useContext, createContext } from "react";
+import { useState, useContext, createContext, cloneElement } from "react";
 import classNames from "classnames/bind";
 
 import styles from "./Sidebar.module.css";
@@ -16,7 +16,9 @@ export default function Sidebar({ children }) {
 
 Sidebar.Trigger = ({ children }) => {
     const [isOpen, setIsOpen] = useContext(SidebarContext);
-    return <button onClick={() => setIsOpen(true)}>{children}</button>;
+    return cloneElement(children, {
+        onClick: () => setIsOpen(true),
+    });
 };
 Sidebar.Content = ({ children }) => {
     const [isOpen, setIsOpen] = useContext(SidebarContext);

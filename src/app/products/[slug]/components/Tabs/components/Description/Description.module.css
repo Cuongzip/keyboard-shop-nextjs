@@ -1,0 +1,11 @@
+.descTab {
+    line-height: 22px;
+}
+
+.descTab ul {
+    list-style-type: disc;
+}
+
+.descTab img {
+    width: 100%;
+}
