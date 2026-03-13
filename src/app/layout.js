@@ -1,5 +1,4 @@
-import Header from "@/components/layout/Header";
-import Footer from "@/components/layout/Footer";
+import { Header, Footer, Chat } from "@/components/layout";
 
 import "./reset.css";
 import "./icons.css";
@@ -15,6 +14,7 @@ export default function Layout({ children }) {
                 <Header />
                 <main className="container main">{children}</main>
                 <Footer />
+                <Chat />
             </body>
         </html>
     );

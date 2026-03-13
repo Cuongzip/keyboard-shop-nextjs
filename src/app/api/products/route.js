@@ -7,10 +7,13 @@ export async function GET(req) {
 
         const { searchParams } = new URL(req.url);
 
-        const featured = searchParams.get("featured");
-        const type = searchParams.get("type");
-        const keyword = searchParams.get("keyword");
+        const featured = searchParams.get("featured") || "";
+        const type = searchParams.get("type") || "";
+        const keyword = searchParams.get("keyword") || "";
+        const page = Number(searchParams.get("page")) || 1;
+        const limit = Number(searchParams.get("limit")) || 10;
 
+        const skip = (page - 1) * limit;
         let filter = {};
 
         if (type) {
@@ -24,7 +27,10 @@ export async function GET(req) {
             filter.featured = featured === "true";
         }
 
-        const products = await Product.find(filter).lean();
+        const products = await Product.find(filter)
+            .skip(skip)
+            .limit(limit)
+            .lean();
 
         return Response.json({ products }, { status: 200 });
     } catch (error) {

@@ -6,6 +6,8 @@ import { useEffect, useState } from "react";
 
 import styles from "./Header.module.css";
 import { WrapSidebar } from "@/components";
+import { Search } from "./components";
+import { CATEGORIES } from "@/lib/constants";
 
 const cx = classNames.bind(styles);
 
@@ -75,47 +77,22 @@ export default function Header() {
                                                 "sidebarDetailsContent",
                                             )}
                                         >
-                                            <li>
-                                                <Link
-                                                    className={cx(
-                                                        "sidebarLink",
-                                                    )}
-                                                    href="/products"
-                                                >
-                                                    Bàn phím
-                                                </Link>
-                                            </li>
-                                            <li>
-                                                <Link
-                                                    className={cx(
-                                                        "sidebarLink",
-                                                    )}
-                                                    href="/products"
-                                                >
-                                                    Keycap
-                                                </Link>
-                                            </li>
-                                            <li>
-                                                <Link
-                                                    className={cx(
-                                                        "sidebarLink",
-                                                    )}
-                                                    href="/products"
-                                                >
-                                                    Switch
-                                                </Link>
-                                            </li>
-
-                                            <li>
-                                                <Link
-                                                    className={cx(
-                                                        "sidebarLink",
-                                                    )}
-                                                    href="/products"
-                                                >
-                                                    Dụng cụ hỗ trợ
-                                                </Link>
-                                            </li>
+                                            {CATEGORIES.map(
+                                                (category, index) => {
+                                                    return (
+                                                        <li key={index}>
+                                                            <Link
+                                                                className={cx(
+                                                                    "sidebarLink",
+                                                                )}
+                                                                href={`/products?type=${category.name}`}
+                                                            >
+                                                                {category.label}
+                                                            </Link>
+                                                        </li>
+                                                    );
+                                                },
+                                            )}
                                         </ul>
                                     </details>
                                 </li>
@@ -166,63 +143,26 @@ export default function Header() {
                             <span>Sản phẩm</span>
                             <i className="fi fi-br-angle-small-down"></i>
                             <ul className={cx("dropdown", "productDropdown")}>
-                                <li>
-                                    <Link
-                                        className={cx("productDropdownLink")}
-                                        href="/products"
-                                    >
-                                        <Image
-                                            src="/images/icons/keyboard.png"
-                                            alt="keyboard"
-                                            width={30}
-                                            height={30}
-                                        />
-                                        <span>Bàn phím</span>
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link
-                                        className={cx("productDropdownLink")}
-                                        href="/products"
-                                    >
-                                        <Image
-                                            src="/images/icons/keycap.png"
-                                            alt="keycap"
-                                            width={30}
-                                            height={30}
-                                        />
-                                        <span>Keycap</span>
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link
-                                        className={cx("productDropdownLink")}
-                                        href="/products"
-                                    >
-                                        <Image
-                                            src="/images/icons/switch.png"
-                                            alt="switch"
-                                            width={30}
-                                            height={30}
-                                        />
-                                        <span>Switch</span>
-                                    </Link>
-                                </li>
-
-                                <li>
-                                    <Link
-                                        className={cx("productDropdownLink")}
-                                        href="/products"
-                                    >
-                                        <Image
-                                            src="/images/icons/tool.png"
-                                            alt="tool"
-                                            width={270}
-                                            height={270}
-                                        />
-                                        <span>Dụng cụ hỗ trợ</span>
-                                    </Link>
-                                </li>
+                                {CATEGORIES.map((category, index) => {
+                                    return (
+                                        <li key={index}>
+                                            <Link
+                                                className={cx(
+                                                    "productDropdownLink",
+                                                )}
+                                                href={`products?type=${category.name}`}
+                                            >
+                                                <Image
+                                                    src={`/images/icons/${category.name}.png`}
+                                                    alt="icon"
+                                                    width={30}
+                                                    height={30}
+                                                />
+                                                <span>{category.label}</span>
+                                            </Link>
+                                        </li>
+                                    );
+                                })}
                             </ul>
                         </div>
                     </li>
@@ -238,16 +178,8 @@ export default function Header() {
                     </li>
                 </ul>
             </nav>
-            <form className={cx("search")}>
-                <label htmlFor="search">
-                    <i className="fi fi-br-search"></i>
-                </label>
-                <input
-                    id="search"
-                    name="search"
-                    placeholder="Tìm kiếm sản phẩm"
-                />
-            </form>
+
+            <Search />
 
             <div className={cx("actions")}>
                 <div className={cx("action", "dropdownWrap")}>
