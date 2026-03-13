@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 
 import styles from "./Header.module.css";
-import { Sidebar } from "@/components";
+import { WrapSidebar } from "@/components";
 
 const cx = classNames.bind(styles);
 
@@ -27,13 +27,13 @@ export default function Header() {
                 boxShadow: isScrolled,
             })}
         >
-            <Sidebar>
-                <Sidebar.Trigger>
+            <WrapSidebar>
+                <WrapSidebar.Trigger>
                     <button className={cx("triggerSidebar")}>
                         <i className="fi fi-br-menu-burger"></i>
                     </button>
-                </Sidebar.Trigger>
-                <Sidebar.Content>
+                </WrapSidebar.Trigger>
+                <WrapSidebar.Sidebar>
                     <div className={cx("sidebar")}>
                         <div className={cx("sidebarSearch")}>
                             <label htmlFor="search">
@@ -147,8 +147,8 @@ export default function Header() {
                             </div>
                         </Link>
                     </div>
-                </Sidebar.Content>
-            </Sidebar>
+                </WrapSidebar.Sidebar>
+            </WrapSidebar>
 
             <Link href="/">
                 <Image

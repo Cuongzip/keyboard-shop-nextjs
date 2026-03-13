@@ -7,7 +7,7 @@ import formattedPrice from "@/lib/formatPrice";
 
 const cx = classNames.bind(styles);
 
-export default function Product({ data, width }) {
+export default function Product({ data, width = "auto" }) {
     return (
         <div className={cx("product")} style={{ width }}>
             <Link href={`/products/${data.slug}`}>

@@ -4,13 +4,16 @@ import styles from "./Checkbox.module.css";
 
 const cx = classNames.bind(styles);
 
-export default function Checkbox({ name, label }) {
+export default function Checkbox({ name, value, children, checked, onChange }) {
     return (
-        <label htmlFor="checkbox" className={cx("checkbox")}>
+        <label htmlFor={`checkbox-${value}`} className={cx("checkbox")}>
             <input
-                id="checkbox"
+                id={`checkbox-${value}`}
                 name={name}
+                value={value}
                 type="checkbox"
+                checked={checked}
+                onChange={onChange}
                 className={cx("checkboxInput")}
             />
 
@@ -18,7 +21,7 @@ export default function Checkbox({ name, label }) {
                 <i className={cx("checkboxIcon", "fi fi-br-check")} />
             </span>
 
-            <div className={cx("checkboxLabel")}>{label}</div>
+            <div className={cx("checkboxLabel")}>{children}</div>
         </label>
     );
 }

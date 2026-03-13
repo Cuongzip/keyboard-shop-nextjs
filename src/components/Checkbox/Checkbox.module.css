@@ -47,3 +47,7 @@
 .checkboxInput:checked ~ .checkboxLabel {
     color: var(--accent-color);
 }
+
+.checkboxLabel {
+    width: 100%;
+}

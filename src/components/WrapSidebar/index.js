@@ -2,25 +2,25 @@
 import { useState, useContext, createContext, cloneElement } from "react";
 import classNames from "classnames/bind";
 
-import styles from "./Sidebar.module.css";
+import styles from "./WrapSidebar.module.css";
 
 const SidebarContext = createContext(null);
 const cx = classNames.bind(styles);
 
-export default function Sidebar({ children }) {
+export default function WrapSidebar({ children }) {
     const [isOpen, setIsOpen] = useState(false);
     return (
         <SidebarContext value={[isOpen, setIsOpen]}>{children}</SidebarContext>
     );
 }
 
-Sidebar.Trigger = ({ children }) => {
+WrapSidebar.Trigger = ({ children }) => {
     const [isOpen, setIsOpen] = useContext(SidebarContext);
     return cloneElement(children, {
         onClick: () => setIsOpen(true),
     });
 };
-Sidebar.Content = ({ children }) => {
+WrapSidebar.Sidebar = ({ children }) => {
     const [isOpen, setIsOpen] = useContext(SidebarContext);
     return (
         <div

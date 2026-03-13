@@ -1,0 +1,75 @@
+.filter {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.head {
+    margin: 20px 20px 0 20px;
+}
+
+.title {
+    font-weight: 600;
+    font-size: 2.8rem;
+    text-align: center;
+}
+
+.body {
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 10px 20px;
+}
+
+.details[open] .trigger i {
+    transform: rotate(45deg);
+}
+
+.details + .details {
+    border-top: 1px solid var(--border-color);
+}
+
+.trigger {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.9rem;
+    padding: 20px 0;
+    font-weight: 500;
+}
+
+.trigger i {
+    font-size: 2.2rem;
+    transition: transform 0.3s ease;
+}
+
+.content {
+    padding-bottom: 15px;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.item + .item {
+    margin-top: 10px;
+}
+
+.label {
+    display: flex;
+    justify-content: space-between;
+    flex: 1;
+}
+
+.tail {
+    display: flex;
+    gap: 20px;
+    padding: 15px 20px;
+    border-top: 1px solid var(--border-color);
+}
+
+.tail button {
+    flex: 1 1;
+    padding: 8px 10px;
+    border-radius: 8px;
+}

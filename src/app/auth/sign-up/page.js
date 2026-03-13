@@ -88,10 +88,9 @@ export default function SignUp() {
                 </div>
 
                 <div className={cx("formGroup", "formGroupRow")}>
-                    <Checkbox
-                        name="policy"
-                        label="Tôi chấp nhận các chính sách bảo mật"
-                    />
+                    <Checkbox name="policy" value="policy">
+                        Tôi chấp nhận các chính sách bảo mật
+                    </Checkbox>
                 </div>
 
                 <button type="submit" className={cx("formSubmitBtn", "mt-2")}>

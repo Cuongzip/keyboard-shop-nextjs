@@ -98,7 +98,7 @@ export default function Banner({ data }) {
                             <Link href="/">
                                 <button
                                     className={cx(
-                                        "button button--outline",
+                                        "button buttonOutline",
                                         "carouselBtn",
                                     )}
                                 >
