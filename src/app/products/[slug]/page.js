@@ -143,7 +143,7 @@ export default async function Detail({ params }) {
 
                                     <label htmlFor="pink-color">
                                         <Image
-                                            src="/images/keyboards/80Retros-GB65/pink.webp"
+                                            src="/images/keyboards/80retros-gb65/pink.webp"
                                             alt="80Retros-GB65 pink"
                                             width={40}
                                             height={40}
@@ -163,7 +163,7 @@ export default async function Detail({ params }) {
 
                                     <label htmlFor="warm-gray-color">
                                         <Image
-                                            src="/images/keyboards/80Retros-GB65/warm-gray.webp"
+                                            src="/images/keyboards/80retros-gb65/warm-gray.webp"
                                             alt="80Retros-GB65 warm gray"
                                             width={40}
                                             height={40}
@@ -183,7 +183,7 @@ export default async function Detail({ params }) {
 
                                     <label htmlFor="cool-grey-color">
                                         <Image
-                                            src="/images/keyboards/80Retros-GB65/cool-grey.webp"
+                                            src="/images/keyboards/80retros-gb65/cool-grey.webp"
                                             alt="80Retros-GB65 cool grey"
                                             width={40}
                                             height={40}
@@ -203,7 +203,7 @@ export default async function Detail({ params }) {
 
                                     <label htmlFor="black-color">
                                         <Image
-                                            src="/images/keyboards/80Retros-GB65/black.webp"
+                                            src="/images/keyboards/80retros-gb65/black.webp"
                                             alt="80Retros-GB65 black"
                                             width={40}
                                             height={40}

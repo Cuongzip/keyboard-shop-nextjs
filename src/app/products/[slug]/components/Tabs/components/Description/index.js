@@ -33,14 +33,14 @@ export default function Description() {
             </h3>
 
             <Image
-                src="/images/keyboards/80Retros-GB65/structure.webp"
+                src="/images/keyboards/80retros-gb65/structure.webp"
                 alt=""
                 width={800}
                 height={500}
             />
 
             <Image
-                src="/images/keyboards/80Retros-GB65/size.webp"
+                src="/images/keyboards/80retros-gb65/size.webp"
                 alt=""
                 width={800}
                 height={500}

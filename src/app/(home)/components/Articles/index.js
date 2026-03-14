@@ -56,7 +56,7 @@ export default function Articles() {
 
                                 <div className={cx("featuredUser", "mt-2")}>
                                     <Image
-                                        src="/images/keyboards/ice-ring-63-RT/10.webp"
+                                        src="/images/keyboards/ice-ring-63-rt/10.webp"
                                         alt="avatar"
                                         width={40}
                                         height={40}
