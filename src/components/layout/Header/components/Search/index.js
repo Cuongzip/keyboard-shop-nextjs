@@ -69,7 +69,7 @@ export default function Search({ className, Link = NextLink }) {
                 onFocus={() => setIsShow(true)}
                 value={value}
             />
-            {isShow && data.products && (
+            {isShow && data.products && value && (
                 <ul className={cx("result")}>
                     {data.products?.map((product, index) => {
                         return (
