@@ -9,9 +9,9 @@ export default function Description() {
     return (
         <div className={cx("descTab")}>
             <p>
-                <b>80Retros Game 1989 65 (GB65)</b>
-                được lấy cảm hứng từ
-                <b>GAMEBOY</b>– một trong những máy chơi game cầm tay nổi tiếng.
+                <b>80Retros Game 1989 65 (GB65)</b> được lấy cảm hứng từ
+                <b> GAMEBOY</b> – một trong những máy chơi game cầm tay nổi
+                tiếng.
             </p>
 
             <h3 className="my-1">

@@ -1,0 +1,22 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.code {
+    font-size: 120px;
+    font-weight: 800;
+    margin: 0;
+}
+
+.title {
+    font-size: 30px;
+    margin: 10px 0;
+}
+
+.desc {
+    color: var(--text-muted);
+    margin-bottom: 25px;
+}

@@ -1,7 +1,11 @@
 .tabs {
     margin: 60px 0;
+    position: relative;
 }
-
+.top {
+    position: absolute;
+    top: -200px;
+}
 .navList {
     display: flex;
     justify-content: center;

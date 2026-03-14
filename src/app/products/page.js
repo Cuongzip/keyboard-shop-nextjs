@@ -5,7 +5,6 @@ import { Reveal, Product } from "@/components";
 import { Pagination, FilterHead } from "./components";
 import { getProducts } from "@/services";
 import { CATEGORIES } from "@/lib/constants";
-import objectToQueryString from "@/lib/objectToQueryString";
 
 const cx = classNames.bind(styles);
 
@@ -13,8 +12,7 @@ export const dynamic = "force-dynamic";
 
 export default async function Products({ searchParams }) {
     const params = await searchParams;
-    const queryString = objectToQueryString(params);
-    const products = await getProducts(queryString);
+    const { products } = await getProducts(params);
     const type = params.type || "";
     const title =
         CATEGORIES.find((category) => type === category.name)?.label ||

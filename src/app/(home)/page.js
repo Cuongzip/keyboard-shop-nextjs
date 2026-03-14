@@ -12,9 +12,15 @@ const cx = classNames.bind(styles);
 
 export default async function Home() {
     const banners = await getBanners();
-    const keycaps = await getProducts("type=keycap");
-    const switches = await getProducts("type=switch");
-    const featured = await getProducts("featured=true");
+    const { products: keycaps } = await getProducts({
+        type: "keycap",
+    });
+    const { products: switches } = await getProducts({
+        type: "switch",
+    });
+    const { products: featured } = await getProducts({
+        featured: "true",
+    });
 
     return (
         <>

@@ -7,7 +7,7 @@ export async function GET(req, { params }) {
 
         const { slug } = await params;
 
-        const product = (await Product.findOne({ slug }).lean()) || [];
+        const product = await Product.findOne({ slug }).lean();
         return Response.json({ product }, { status: 200 });
     } catch (error) {
         console.error(error);

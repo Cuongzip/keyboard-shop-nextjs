@@ -26,13 +26,17 @@ export async function GET(req) {
         if (featured) {
             filter.featured = featured === "true";
         }
+        const total = await Product.countDocuments(filter);
 
         const products = await Product.find(filter)
             .skip(skip)
             .limit(limit)
             .lean();
 
-        return Response.json({ products }, { status: 200 });
+        return Response.json(
+            { products, total, totalPages: Math.ceil(total / limit), page },
+            { status: 200 },
+        );
     } catch (error) {
         console.error(error);
         return Response.json({ message: "Server error" }, { status: 500 });

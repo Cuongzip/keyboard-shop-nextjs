@@ -20,10 +20,11 @@ const tabs = [
 export default function Tabs() {
     const [activeTab, setActiveTab] = useState(0);
     const [isSeeMore, setIsSeeMore] = useState(false);
-    const navRef = useRef(null);
+    const topRef = useRef(null);
     return (
-        <Reveal>
-            <section className={cx("tabs")}>
+        <section className={cx("tabs")}>
+            <div ref={topRef} className={cx("top")}></div>
+            <Reveal>
                 <nav className={cx("nav")}>
                     <ul className={cx("navList")}>
                         {tabs.map((tab, index) => (
@@ -39,8 +40,9 @@ export default function Tabs() {
                         ))}
                     </ul>
                 </nav>
+            </Reveal>
+            <Reveal>
                 <div
-                    ref={navRef}
                     className={cx("tab", {
                         seeMore: isSeeMore,
                     })}
@@ -52,7 +54,7 @@ export default function Tabs() {
                             <button
                                 onClick={() => {
                                     setIsSeeMore(false);
-                                    navRef.current.scrollIntoView({
+                                    topRef.current.scrollIntoView({
                                         behavior: "smooth",
                                         block: "start",
                                     });
@@ -79,7 +81,7 @@ export default function Tabs() {
                         )}
                     </div>
                 </div>
-            </section>
-        </Reveal>
+            </Reveal>
+        </section>
     );
 }

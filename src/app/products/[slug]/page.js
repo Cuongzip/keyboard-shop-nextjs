@@ -1,11 +1,13 @@
 import classNames from "classnames/bind";
 import Link from "next/link";
 import Image from "next/image";
+import { notFound } from "next/navigation";
 
 import { getProduct, getProducts } from "@/services";
 import { Reveal, Quantity, Carousel } from "@/components";
 import { Tabs, Gallery } from "./components";
 import formattedPrice from "@/lib/formatPrice";
+import { CATEGORIES } from "@/lib/constants";
 import styles from "./Detail.module.css";
 
 const cx = classNames.bind(styles);
@@ -13,16 +15,27 @@ const cx = classNames.bind(styles);
 export default async function Detail({ params }) {
     const { slug } = await params;
     const product = await getProduct(slug);
-    const products = await getProducts("featured=true");
+
+    if (!product) {
+        notFound();
+    }
+
+    const { products } = await getProducts({ featured: "true" });
+    const category = CATEGORIES.find(
+        (category) => product.type === category.name,
+    )?.label;
+
     return (
         <>
             <Reveal>
                 <section className={cx("breadcrumb")}>
                     <Link href="/">Trang chủ</Link>
                     &nbsp;/&nbsp;
-                    <Link href="/products">Bàn phím cơ</Link>
+                    <Link href={`/products?type=${product.type}`}>
+                        {category}
+                    </Link>
                     &nbsp;/&nbsp;
-                    <span>80Retros GB65</span>
+                    <span>{product.name}</span>
                 </section>
             </Reveal>
             <Reveal>

@@ -1,18 +1,12 @@
 import fetcher from "@/lib/fetcher ";
+import objectToQueryString from "@/lib/objectToQueryString";
 
-export async function getProducts(queryString = "") {
-    try {
-        const { products } = await fetcher(`products?${queryString}`);
-        return products;
-    } catch (error) {
-        console.log(error);
-    }
+export async function getProducts(params = {}) {
+    const queryString = objectToQueryString(params);
+    const data = await fetcher(`products?${queryString}`);
+    return data;
 }
 export async function getProduct(slug) {
-    try {
-        const { product } = await fetcher(`/products/${slug}`);
-        return product;
-    } catch (error) {
-        console.log(error);
-    }
+    const { product } = await fetcher(`/products/${slug}`);
+    return product;
 }
