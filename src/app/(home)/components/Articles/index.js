@@ -91,7 +91,7 @@ export default function Articles() {
                             <div className={cx("articleInfo")}>
                                 <div className={cx("articleUser")}>
                                     <Image
-                                        src="/images/keyboards/New-Wind-X80-Classic/3.webp"
+                                        src="/images/keyboards/new-wind-x80-classic/3.webp"
                                         alt="avatar"
                                         width={40}
                                         height={40}
@@ -124,7 +124,7 @@ export default function Articles() {
                             <div className={cx("articleInfo")}>
                                 <div className={cx("articleUser")}>
                                     <Image
-                                        src="/images/keyboards/New-Wind-X80-Classic/3.webp"
+                                        src="/images/keyboards/new-wind-x80-classic/3.webp"
                                         alt="avatar"
                                         width={40}
                                         height={40}
@@ -158,7 +158,7 @@ export default function Articles() {
                             <div className={cx("articleInfo")}>
                                 <div className={cx("articleUser")}>
                                     <Image
-                                        src="/images/keyboards/New-Wind-X80-Classic/3.webp"
+                                        src="/images/keyboards/new-wind-x80-classic/3.webp"
                                         alt="avatar"
                                         width={40}
                                         height={40}
