@@ -222,6 +222,7 @@ b {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    overflow-x: hidden;
 }
 /* animation for summary */
 

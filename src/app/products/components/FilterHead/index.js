@@ -44,7 +44,7 @@ export default function FilterHead({}) {
                     <div className={cx("sorts")}>
                         <Link
                             href={createHref(["featured", "true"])}
-                            className={cx("button", "buttonOutline", "sort", {
+                            className={cx("sort", {
                                 sortActive: featured,
                             })}
                         >
@@ -54,7 +54,7 @@ export default function FilterHead({}) {
 
                         <Link
                             href={createHref(["promotion", "true"])}
-                            className={cx("button", "buttonOutline", "sort", {
+                            className={cx("sort", {
                                 sortActive: promotion,
                             })}
                         >
@@ -64,7 +64,7 @@ export default function FilterHead({}) {
 
                         <Link
                             href={createHref(["sort", "price_asc"])}
-                            className={cx("button", "buttonOutline", "sort", {
+                            className={cx("sort", {
                                 sortActive: sort === "price_asc",
                             })}
                         >
@@ -74,7 +74,7 @@ export default function FilterHead({}) {
 
                         <Link
                             href={createHref(["sort", "price_desc"])}
-                            className={cx("button", "buttonOutline", "sort", {
+                            className={cx("sort", {
                                 sortActive: sort === "price_desc",
                             })}
                         >
@@ -82,19 +82,52 @@ export default function FilterHead({}) {
                             <span>Giá Cao - Thấp</span>
                         </Link>
 
-                        <button className={cx("sortMobile", "sortActive")}>
+                        <Link
+                            href={createHref(["featured", "true"])}
+                            className={cx("sortMobile", {
+                                sortMobileActive: featured,
+                            })}
+                        >
                             Phổ biến
-                        </button>
+                        </Link>
+                        <Link
+                            href={createHref(["promotion", "true"])}
+                            className={cx("sortMobile", {
+                                sortMobileActive: promotion,
+                            })}
+                        >
+                            <i className="fi fi-rr-"></i>
+                            <span>Khuyến mãi</span>
+                        </Link>
 
-                        <button className={cx("sortMobile")}>Khuyến mãi</button>
-
-                        <button className={cx("sortMobile")}>
+                        <Link
+                            href={createHref([
+                                "sort",
+                                sort === "price_asc"
+                                    ? "price_desc"
+                                    : "price_asc",
+                            ])}
+                            className={cx("sortMobile", {
+                                sortMobileActive:
+                                    sort === "price_asc" ||
+                                    sort === "price_desc",
+                            })}
+                        >
                             <span>Giá</span>
                             <div className={cx("sortIcon")}>
-                                <i className="fi fi-br-angle-small-up"></i>
-                                <i className="fi fi-br-angle-small-down"></i>
+                                <i
+                                    className={cx("fi fi-br-angle-small-up", {
+                                        iconActive: sort === "price_asc",
+                                    })}
+                                ></i>
+                                <i
+                                    className={cx("fi fi-br-angle-small-down", {
+                                        iconActive: sort === "price_desc",
+                                    })}
+                                ></i>
                             </div>
-                        </button>
+                        </Link>
+
                         <WrapSidebar.Trigger>
                             <button className={cx("sortMobile")}>
                                 Bộ lọc

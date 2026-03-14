@@ -84,7 +84,7 @@ export default async function Detail({ params }) {
                         </div>
                         <div className={cx("productGroup", "my-2")}>
                             <div className={cx("productLabel")}>
-                                <span>Chế độ kết nối :</span>
+                                <span>Chế độ kết nối :</span>{" "}
                                 <span>3 mode</span>
                             </div>
 
@@ -121,8 +121,7 @@ export default async function Detail({ params }) {
 
                         <div className={cx("productGroup", "my-2")}>
                             <div className={cx("productLabel")}>
-                                <span>Màu :</span>
-                                <span>Hồng</span>
+                                <span>Màu :</span> <span>Hồng</span>
                             </div>
 
                             <div
@@ -216,7 +215,7 @@ export default async function Detail({ params }) {
 
                         <div className={cx("productGroup", "my-2")}>
                             <div className={cx("productLabel")}>
-                                <span>Tình trạng giao hàng:</span>
+                                <span>Tình trạng giao hàng:</span>{" "}
                                 <span>In stock</span>
                             </div>
 

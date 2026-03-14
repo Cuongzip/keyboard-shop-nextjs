@@ -7,18 +7,18 @@ import { Reveal } from "@/components";
 const cx = classNames.bind(styles);
 
 const images = [
-    "/images/keyboards/AM-RGB-65-R1-5/1.webp",
-    "/images/keyboards/ice-ring-63-RT/3.webp",
-    "/images/keyboards/AM-RGB-65-R1-5/4.webp",
-    "/images/keyboards/New-Wind-X80-Classic/5.webp",
-    "/images/keyboards/ice-ring-63-RT/8.webp",
-    "/images/keyboards/Freya-Ultra/1.webp",
-    "/images/keyboards/ice-ring-63-RT/10.webp",
-    "/images/keyboards/Freya-Ultra/5.webp",
-    "/images/keyboards/AM-RGB-65-R1-5/7.webp",
-    "/images/keyboards/AM-RGB-65-R1-5/6.webp",
-    "/images/keyboards/AM-RGB-65-R1-5/9.webp",
-    "/images/keyboards/Freya-Ultra/4.webp",
+    "/images/keyboards/am-rgb-65-r1-5/1.webp",
+    "/images/keyboards/ice-ring-63-rt/3.webp",
+    "/images/keyboards/am-rgb-65-r1-5/4.webp",
+    "/images/keyboards/new-wind-x80-classic/5.webp",
+    "/images/keyboards/ice-ring-63-rt/8.webp",
+    "/images/keyboards/freya-ultra/1.webp",
+    "/images/keyboards/ice-ring-63-rt/10.webp",
+    "/images/keyboards/freya-ultra/5.webp",
+    "/images/keyboards/am-rgb-65-r1-5/7.webp",
+    "/images/keyboards/am-rgb-65-r1-5/6.webp",
+    "/images/keyboards/am-rgb-65-r1-5/9.webp",
+    "/images/keyboards/freya-ultra/4.webp",
 ];
 
 export default function Gallery() {

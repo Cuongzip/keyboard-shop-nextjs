@@ -89,22 +89,22 @@ export default function Banner({ data }) {
                         </div>
 
                         <div className={cx("btns", "mt-2")}>
-                            <Link href="/">
-                                <button className={cx("button", "carouselBtn")}>
-                                    <i className="fi fi-rr-cart-shopping-fast"></i>
-                                    <span>Mua ngay</span>
-                                </button>
+                            <Link
+                                href="/products"
+                                className={cx("button", "carouselBtn")}
+                            >
+                                <i className="fi fi-rr-cart-shopping-fast"></i>
+                                <span>Mua ngay</span>
                             </Link>
-                            <Link href="/">
-                                <button
-                                    className={cx(
-                                        "button buttonOutline",
-                                        "carouselBtn",
-                                    )}
-                                >
-                                    <i className="fi fi-rs-eye"></i>
-                                    <span>Xem chi tiết</span>
-                                </button>
+                            <Link
+                                href="/products"
+                                className={cx(
+                                    "button buttonOutline",
+                                    "carouselBtn",
+                                )}
+                            >
+                                <i className="fi fi-rs-eye"></i>
+                                <span>Xem chi tiết</span>
                             </Link>
                         </div>
                     </div>

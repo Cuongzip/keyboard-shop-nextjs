@@ -1,5 +1,4 @@
 import classNames from "classnames/bind";
-import Image from "next/image";
 
 import styles from "./products.module.css";
 import { Reveal, Product } from "@/components";

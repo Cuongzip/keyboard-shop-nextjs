@@ -64,7 +64,7 @@ export default function Sidebar() {
                             </li>
                         </ul>
                     </nav>
-                    <Link className={cx("tail")} href="/sign-up">
+                    <Link className={cx("tail")} href="/auth/sign-up">
                         <div className={cx("user")}>
                             <i className="fi fi-rr-circle-user"></i>
                             <span>Đăng ký / Đăng nhập</span>

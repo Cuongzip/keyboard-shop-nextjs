@@ -41,47 +41,46 @@ export default function Tabs() {
                     </ul>
                 </nav>
             </Reveal>
-            <Reveal>
-                <div
-                    className={cx("tab", {
-                        seeMore: isSeeMore,
-                    })}
-                >
-                    {tabs[activeTab].component}
 
-                    <div className="center">
-                        {isSeeMore ? (
-                            <button
-                                onClick={() => {
-                                    setIsSeeMore(false);
-                                    topRef.current.scrollIntoView({
-                                        behavior: "smooth",
-                                        block: "start",
-                                    });
-                                }}
-                                className={cx(
-                                    "button",
-                                    "buttonOutline",
-                                    "summaryBtn",
-                                )}
-                            >
-                                Thu gọn
-                            </button>
-                        ) : (
-                            <button
-                                onClick={() => setIsSeeMore(true)}
-                                className={cx(
-                                    "button",
-                                    "buttonOutline",
-                                    "seeMoreBtn",
-                                )}
-                            >
-                                Xem thêm
-                            </button>
-                        )}
-                    </div>
+            <div
+                className={cx("tab", {
+                    seeMore: isSeeMore,
+                })}
+            >
+                {tabs[activeTab].component}
+
+                <div className="center">
+                    {isSeeMore ? (
+                        <button
+                            onClick={() => {
+                                setIsSeeMore(false);
+                                topRef.current.scrollIntoView({
+                                    behavior: "smooth",
+                                    block: "start",
+                                });
+                            }}
+                            className={cx(
+                                "button",
+                                "buttonOutline",
+                                "summaryBtn",
+                            )}
+                        >
+                            Thu gọn
+                        </button>
+                    ) : (
+                        <button
+                            onClick={() => setIsSeeMore(true)}
+                            className={cx(
+                                "button",
+                                "buttonOutline",
+                                "seeMoreBtn",
+                            )}
+                        >
+                            Xem thêm
+                        </button>
+                    )}
                 </div>
-            </Reveal>
+            </div>
         </section>
     );
 }

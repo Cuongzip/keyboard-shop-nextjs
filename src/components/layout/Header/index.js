@@ -94,40 +94,84 @@ export default function Header() {
                             Sản phẩm mới thêm
                         </h3>
                         <div className={cx("cartDropdownList")}>
-                            <div>
-                                <Link
-                                    className={cx("cartDropdownLink")}
-                                    href="/"
-                                >
-                                    <div className={cx("productSmall")}>
-                                        <div className={cx("productSmallLeft")}>
-                                            <div
-                                                className={cx(
-                                                    "productSmallImage",
-                                                )}
-                                            >
-                                                <Image
-                                                    src="/images/keyboards/AM-RGB-65-R1.5/1.webp"
-                                                    alt="keyboard"
-                                                    fill
-                                                />
-                                            </div>
-                                            <span
-                                                className={cx(
-                                                    "productSmallName",
-                                                )}
-                                            >
-                                                AM RGB 65 R1.5
-                                            </span>
+                            <Link
+                                className={cx("cartDropdownLink")}
+                                href="/products"
+                            >
+                                <div className={cx("productSmall")}>
+                                    <div className={cx("productSmallLeft")}>
+                                        <div
+                                            className={cx("productSmallImage")}
+                                        >
+                                            <Image
+                                                src="/images/keyboards/am-rgb-65-r1-5/1.webp"
+                                                alt="keyboard"
+                                                fill
+                                            />
                                         </div>
                                         <span
-                                            className={cx("productSmallPrice")}
+                                            className={cx("productSmallName")}
                                         >
-                                            1.000.000đ
+                                            AM RGB 65 R1.5
                                         </span>
                                     </div>
-                                </Link>
-                            </div>
+                                    <span className={cx("productSmallPrice")}>
+                                        1.000.000đ
+                                    </span>
+                                </div>
+                            </Link>
+                            <Link
+                                className={cx("cartDropdownLink")}
+                                href="/products"
+                            >
+                                <div className={cx("productSmall")}>
+                                    <div className={cx("productSmallLeft")}>
+                                        <div
+                                            className={cx("productSmallImage")}
+                                        >
+                                            <Image
+                                                src="/images/keyboards/am-rgb-65-r1-5/1.webp"
+                                                alt="keyboard"
+                                                fill
+                                            />
+                                        </div>
+                                        <span
+                                            className={cx("productSmallName")}
+                                        >
+                                            AM RGB 65 R1.5
+                                        </span>
+                                    </div>
+                                    <span className={cx("productSmallPrice")}>
+                                        1.000.000đ
+                                    </span>
+                                </div>
+                            </Link>
+                            <Link
+                                className={cx("cartDropdownLink")}
+                                href="/products"
+                            >
+                                <div className={cx("productSmall")}>
+                                    <div className={cx("productSmallLeft")}>
+                                        <div
+                                            className={cx("productSmallImage")}
+                                        >
+                                            <Image
+                                                src="/images/keyboards/am-rgb-65-r1-5/1.webp"
+                                                alt="keyboard"
+                                                fill
+                                            />
+                                        </div>
+                                        <span
+                                            className={cx("productSmallName")}
+                                        >
+                                            AM RGB 65 R1.5
+                                        </span>
+                                    </div>
+                                    <span className={cx("productSmallPrice")}>
+                                        1.000.000đ
+                                    </span>
+                                </div>
+                            </Link>
                         </div>
                         <div className={cx("cartDropdownTail")}>
                             <span>Tổng 4 sản phẩm</span>
@@ -141,7 +185,7 @@ export default function Header() {
                     </div>
                 </div>
                 <div className={cx("action", "actionUser", "dropdownWrap")}>
-                    <Link href="/sign-up" className={cx("actionIcon")}>
+                    <Link href="/auth/sign-up" className={cx("actionIcon")}>
                         <i className="fi fi-rr-circle-user"></i>
                     </Link>
                     <ul className={cx("dropdown", "userDropdown")}>

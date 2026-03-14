@@ -16,10 +16,10 @@ export default function EmptyProduct() {
                 className={cx("img")}
             />
 
-            <h1 className={cx("title")}>Không có bàn phím nào</h1>
+            <h1 className={cx("title")}>Không có sản phẩm nào</h1>
 
             <p className={cx("desc")}>
-                Danh mục này hiện chưa có sản phẩm. Thử xem tất cả bàn phím nhé.
+                Danh mục này hiện chưa có sản phẩm. Xem tất cả sản phẩm .
             </p>
 
             <Link href="/products" className={cx("button")}>

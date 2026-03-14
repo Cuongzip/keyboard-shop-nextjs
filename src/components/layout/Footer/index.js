@@ -28,21 +28,27 @@ export default function Footer() {
                             <h3 className={cx("title")}>Menu</h3>
                         </li>
                         <li>
-                            <Link className={cx("link")} href="./index.html">
+                            <Link className={cx("link")} href="/">
                                 <i className="fi fi-rr-house-chimney"></i>
                                 <span>Trang chủ</span>
                             </Link>
                         </li>
                         <li>
-                            <Link className={cx("link")} href="./products.html">
+                            <Link className={cx("link")} href="/products">
                                 <i className="fi fi-rr-keyboard"></i>
                                 <span>Sản phẩm</span>
                             </Link>
                         </li>
                         <li>
-                            <Link className={cx("link")} href="./cart.html">
-                                <i className="fi fi-rr-shopping-cart"></i>
-                                <span>Giỏ hàng</span>
+                            <Link className={cx("link")} href="/auth/sign-in">
+                                <i className="fi fi-br-arrow-alt-to-right"></i>
+                                <span>Đăng nhập</span>
+                            </Link>
+                        </li>
+                        <li>
+                            <Link className={cx("link")} href="/auth/sign-up">
+                                <i className="fi fi-br-arrow-alt-to-left"></i>
+                                <span>Đăng ký</span>
                             </Link>
                         </li>
                     </ul>

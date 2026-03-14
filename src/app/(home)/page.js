@@ -22,7 +22,7 @@ export default async function Home() {
     const { products: featured } = await getProducts({
         featured: "true",
     });
-    console.log(switches);
+
     return (
         <>
             <Banner data={banners} />
