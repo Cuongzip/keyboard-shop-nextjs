@@ -5,8 +5,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 
 import styles from "./Header.module.css";
-import { WrapSidebar } from "@/components";
-import { Search } from "./components";
+import { Search, Sidebar } from "./components";
 import { CATEGORIES } from "@/lib/constants";
 
 const cx = classNames.bind(styles);
@@ -29,104 +28,7 @@ export default function Header() {
                 boxShadow: isScrolled,
             })}
         >
-            <WrapSidebar>
-                <WrapSidebar.Trigger>
-                    <button className={cx("triggerSidebar")}>
-                        <i className="fi fi-br-menu-burger"></i>
-                    </button>
-                </WrapSidebar.Trigger>
-                <WrapSidebar.Sidebar>
-                    <div className={cx("sidebar")}>
-                        <div className={cx("sidebarSearch")}>
-                            <label htmlFor="search">
-                                <i className="fi fi-br-search"></i>
-                            </label>
-                            <input
-                                id="search"
-                                name="search"
-                                placeholder="Tìm kiếm sản phẩm"
-                            />
-                        </div>
-
-                        <nav className={cx("sidebarNav", "mt-2")}>
-                            <ul className={cx("sidebarNavList")}>
-                                <li>
-                                    <details className={cx("sidebarDetails")}>
-                                        <summary
-                                            className={cx(
-                                                "sidebarDetailsTrigger",
-                                            )}
-                                        >
-                                            <span>Sản phẩm</span>
-
-                                            <i
-                                                className={cx(
-                                                    "angelDown",
-                                                    "angle-down fi fi-br-angle-small-down",
-                                                )}
-                                            ></i>
-                                            <i
-                                                className={cx(
-                                                    "angelUp",
-                                                    "angle-up fi fi-br-angle-small-up",
-                                                )}
-                                            ></i>
-                                        </summary>
-                                        <ul
-                                            className={cx(
-                                                "sidebarDetailsContent",
-                                            )}
-                                        >
-                                            {CATEGORIES.map(
-                                                (category, index) => {
-                                                    return (
-                                                        <li key={index}>
-                                                            <Link
-                                                                className={cx(
-                                                                    "sidebarLink",
-                                                                )}
-                                                                href={`/products?type=${category.name}`}
-                                                            >
-                                                                {category.label}
-                                                            </Link>
-                                                        </li>
-                                                    );
-                                                },
-                                            )}
-                                        </ul>
-                                    </details>
-                                </li>
-                                <li>
-                                    <Link
-                                        className={cx("sidebarLink")}
-                                        href="/"
-                                    >
-                                        Bộ sưu tập
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link
-                                        className={cx("sidebarLink")}
-                                        href="/"
-                                    >
-                                        Hướng dẫn
-                                    </Link>
-                                </li>
-                            </ul>
-                        </nav>
-                        <Link className={cx("sidebarTail")} href="/sign-up">
-                            <div className={cx("sidebarUser")}>
-                                <i className="fi fi-rr-circle-user"></i>
-                                <span>Đăng ký / Đăng nhập</span>
-                            </div>
-                            <div className={cx("sidebarSetting")}>
-                                <i className="fi fi-sr-settings"></i>
-                            </div>
-                        </Link>
-                    </div>
-                </WrapSidebar.Sidebar>
-            </WrapSidebar>
-
+            <Sidebar />
             <Link href="/">
                 <Image
                     className={cx("logo")}
@@ -138,48 +40,48 @@ export default function Header() {
             </Link>
             <nav className={cx("nav")}>
                 <ul className={cx("navList")}>
-                    <li className={cx("navItem")}>
-                        <div className={cx("navLink", "dropdownWrap")}>
+                    <li className={cx("navItem", "dropdownWrap")}>
+                        <Link className={cx("navLink")} href="/products">
                             <span>Sản phẩm</span>
                             <i className="fi fi-br-angle-small-down"></i>
-                            <ul className={cx("dropdown", "productDropdown")}>
-                                {CATEGORIES.map((category, index) => {
-                                    return (
-                                        <li key={index}>
-                                            <Link
-                                                className={cx(
-                                                    "productDropdownLink",
-                                                )}
-                                                href={`products?type=${category.name}`}
-                                            >
-                                                <Image
-                                                    src={`/images/icons/${category.name}.png`}
-                                                    alt="icon"
-                                                    width={30}
-                                                    height={30}
-                                                />
-                                                <span>{category.label}</span>
-                                            </Link>
-                                        </li>
-                                    );
-                                })}
-                            </ul>
-                        </div>
+                        </Link>
+                        <ul className={cx("dropdown", "productDropdown")}>
+                            {CATEGORIES.map((category, index) => {
+                                return (
+                                    <li key={index}>
+                                        <Link
+                                            className={cx(
+                                                "productDropdownLink",
+                                            )}
+                                            href={`products?type=${category.name}`}
+                                        >
+                                            <Image
+                                                src={`/images/icons/${category.name}.png`}
+                                                alt="icon"
+                                                width={30}
+                                                height={30}
+                                            />
+                                            <span>{category.label}</span>
+                                        </Link>
+                                    </li>
+                                );
+                            })}
+                        </ul>
                     </li>
                     <li className={cx("navItem")}>
-                        <Link className={cx("navLink")} href="/">
+                        <Link className={cx("navLink")} href="/album">
                             Bộ sưu tập
                         </Link>
                     </li>
                     <li className={cx("navItem")}>
-                        <Link className={cx("navLink")} href="/">
+                        <Link className={cx("navLink")} href="/tutorial">
                             Hướng dẫn
                         </Link>
                     </li>
                 </ul>
             </nav>
 
-            <Search />
+            <Search className={cx("search")} />
 
             <div className={cx("actions")}>
                 <div className={cx("action", "dropdownWrap")}>

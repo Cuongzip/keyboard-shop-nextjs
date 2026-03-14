@@ -59,7 +59,7 @@ export default function Chat() {
         <div className={cx("chat")}>
             <button
                 className={cx("trigger", "center")}
-                onClick={() => setOpen(true)}
+                onClick={() => setOpen(!open)}
             >
                 <i className="fi fi-sr-comment" />
             </button>

@@ -10,7 +10,7 @@ export default function Benefits() {
         <section className={cx("benefits")}>
             <Reveal>
                 <h2 className={cx("title")}>
-                    <span>Vì sao chọn chúng tôi?</span>
+                    <span>Vì sao chọn chúng tôi?</span>{" "}
                     <span>
                         Dưới đây là những lý do bạn nên mua sắm cùng chúng tôi.
                     </span>
@@ -24,10 +24,10 @@ export default function Benefits() {
                         ></i>
                         <p className={cx("text")}>
                             <span className={cx("purple")}>
-                                Tất cả đơn hàng
+                                Tất cả đơn hàng{" "}
                             </span>
                             đều được đóng gói cẩn thận với sự tận tâm 💜 và gửi
-                            đi từ kho của chúng tôi tại
+                            đi từ kho của chúng tôi tại{" "}
                             <span className={cx("purple")}>VN.</span>
                         </p>
                     </div>
@@ -42,11 +42,11 @@ export default function Benefits() {
                             )}
                         ></i>
                         <p className={cx("text")}>
-                            Phần lớn đơn hàng được giao trong vòng
-                            <span className={cx("blue")}>24–48 giờ</span>
-                            và hỗ trợ đổi trả trong
-                            <span className={cx("blue")}>14 ngày</span>
-                            kể từ khi nhận hàng.
+                            Phần lớn đơn hàng được giao trong vòng{" "}
+                            <span className={cx("blue")}>24–48 giờ</span> và hỗ
+                            trợ đổi trả trong{" "}
+                            <span className={cx("blue")}>14 ngày</span> kể từ
+                            khi nhận hàng.
                         </p>
                     </div>
                 </Reveal>
@@ -60,13 +60,11 @@ export default function Benefits() {
                             )}
                         ></i>
                         <p className={cx("text")}>
-                            Hơn
-                            <span className={cx("pink")}>1.300+</span>
-                            đánh giá
-                            <span className={cx("pink")}>5 sao</span>
-                            đã được xác minh, với điểm đánh giá trung bình
-                            <span className={cx("pink")}>4,89</span>
-                            từ khách hàng.
+                            Hơn <span className={cx("pink")}>1.300+</span> đánh
+                            giá <span className={cx("pink")}>5 sao</span> đã
+                            được xác minh, với điểm đánh giá trung bình{" "}
+                            <span className={cx("pink")}>4,89</span> từ khách
+                            hàng.
                         </p>
                     </div>
                 </Reveal>
@@ -80,13 +78,13 @@ export default function Benefits() {
                             )}
                         ></i>
                         <p className={cx("text")}>
-                            Nhiều phương thức
+                            Nhiều phương thức{" "}
                             <span className={cx("green")}>
                                 thanh toán linh hoạt
-                            </span>
-                            khi thanh toán, bao gồm các gói
-                            <span className={cx("green")}>trả góp</span>
-                            không lãi suất.
+                            </span>{" "}
+                            khi thanh toán, bao gồm các gói{" "}
+                            <span className={cx("green")}>trả góp</span> không
+                            lãi suất.
                         </p>
                     </div>
                 </Reveal>

@@ -218,6 +218,10 @@ b {
 .main {
     padding-top: calc(var(--header-height));
     padding-bottom: 80px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 /* animation for summary */
 
@@ -243,4 +247,33 @@ details[open]::details-content {
 }
 .breadcrumb a:hover {
     color: var(--accent-color);
+}
+
+/* dropdown */
+.dropdownWrap:hover .dropdown {
+    display: block;
+}
+.dropdownWrap {
+    position: relative;
+}
+.dropdownWrap::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    right: 0;
+    display: block;
+    width: 130%;
+    height: 15px;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: calc(100% + 15px);
+    background-color: var(--bg-color);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    min-width: 230px;
+    border-radius: 10px;
 }

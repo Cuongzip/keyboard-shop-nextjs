@@ -2,7 +2,7 @@
 import classNames from "classnames/bind";
 import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
-import Link from "next/link";
+import NextLink from "next/link";
 import Image from "next/image";
 
 import styles from "./Search.module.css";
@@ -12,7 +12,7 @@ import formattedPrice from "@/lib/formatPrice";
 
 const cx = classNames.bind(styles);
 
-export default function Search() {
+export default function Search({ className, Link = NextLink }) {
     const [data, setData] = useState({});
     const [value, setValue] = useState("");
     const [isShow, setIsShow] = useState(false);
@@ -55,7 +55,7 @@ export default function Search() {
     return (
         <form
             ref={searchRef}
-            className={cx("search")}
+            className={cx(className, "search")}
             onSubmit={(e) => handleSubmit(e)}
         >
             <label htmlFor="search">
@@ -69,7 +69,7 @@ export default function Search() {
                 onFocus={() => setIsShow(true)}
                 value={value}
             />
-            {isShow && (
+            {isShow && data.products && (
                 <ul className={cx("result")}>
                     {data.products?.map((product, index) => {
                         return (
@@ -77,6 +77,7 @@ export default function Search() {
                                 <Link
                                     className={cx("link")}
                                     href={`/products/${product.slug}`}
+                                    onClick={() => setIsShow(false)}
                                 >
                                     <div className={cx("image")}>
                                         <Image
@@ -101,7 +102,8 @@ export default function Search() {
                     <li>
                         <Link
                             className={cx("link", "tail")}
-                            href={`/products/keyword=${debouncedValue}`}
+                            href={`/products?keyword=${debouncedValue}`}
+                            onClick={() => setIsShow(false)}
                         >
                             Xem tất cả ({data.total || 0})
                         </Link>

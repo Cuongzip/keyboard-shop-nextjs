@@ -23,7 +23,7 @@ export default function Footer() {
                     </h3>
                 </div>
                 <div className={cx("column")}>
-                    <ul className={cx("list")}>
+                    <ul>
                         <li>
                             <h3 className={cx("title")}>Menu</h3>
                         </li>
@@ -48,7 +48,7 @@ export default function Footer() {
                     </ul>
                 </div>
                 <div className={cx("column")}>
-                    <ul className={cx("list")}>
+                    <ul>
                         <li>
                             <h3 className={cx("title")}>Hỗ trợ</h3>
                         </li>
@@ -73,7 +73,7 @@ export default function Footer() {
                     </ul>
                 </div>
                 <div className={cx("column")}>
-                    <ul className={cx("list")}>
+                    <ul>
                         <li>
                             <h3 className={cx("title")}>Liên lạc</h3>
                         </li>

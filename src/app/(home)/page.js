@@ -5,6 +5,7 @@ import { getBanners, getProducts } from "@/services";
 import { Banner, Gallery, Benefits, Articles } from "./components";
 import { Carousel, Reveal } from "@/components";
 import styles from "./Home.module.css";
+import Loading from "../loading";
 
 export const dynamic = "force-dynamic";
 
@@ -21,7 +22,7 @@ export default async function Home() {
     const { products: featured } = await getProducts({
         featured: "true",
     });
-
+    console.log(switches);
     return (
         <>
             <Banner data={banners} />
@@ -29,7 +30,10 @@ export default async function Home() {
                 <Reveal>
                     <div className={cx("keycapsHead", "mb-2")}>
                         <h2 className={cx("title")}>Keycaps</h2>
-                        <Link className={cx("center")} href="/products/keycaps">
+                        <Link
+                            className={cx("center")}
+                            href="/products?type=keycap"
+                        >
                             <span>Xem thêm</span>
                             <i className="fi fi-rr-arrow-small-right"></i>
                         </Link>
@@ -43,7 +47,7 @@ export default async function Home() {
                         <h2 className={cx("title")}>Switches</h2>
                         <Link
                             className={cx("center")}
-                            href="/products/switches"
+                            href="/products?type=switch"
                         >
                             <span>Xem thêm</span>
                             <i className="fi fi-rr-arrow-small-right"></i>

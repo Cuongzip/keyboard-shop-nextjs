@@ -1,0 +1,106 @@
+.trigger {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+    color: var(--white);
+    font-size: 1.4rem;
+}
+.trigger:hover {
+    background-color: var(--accent-color);
+}
+
+.sidebar {
+    padding: 20px 15px;
+    height: 100%;
+    position: relative;
+}
+.sidebarSearch {
+    display: flex;
+    align-items: center;
+    background-color: var(--surface-color);
+    border-radius: 15px;
+    padding: 0 10px;
+    gap: 10px;
+    color: var(--text-muted);
+    border: 1px solid var(--border-color);
+}
+.sidebarSearch:has(input:focus) {
+    border-color: var(--accent-color);
+}
+.sidebarSearch label i {
+    font-size: 1.8rem;
+    color: var(--text-muted);
+}
+.sidebarSearch input {
+    background-color: transparent;
+    padding: 8px 0;
+    font-size: 1.6rem;
+    flex: 1;
+}
+.navItem:hover .menu {
+    display: block;
+}
+
+.link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.link {
+    width: 100%;
+    font-size: 1.8rem;
+    padding: 9px 12px;
+    border-radius: 15px;
+    font-weight: 500;
+    margin: 5px 0;
+}
+
+.link:hover {
+    background-color: var(--surface-color);
+}
+
+.menu {
+    display: none;
+}
+.menu .link {
+    padding: 9px 25px;
+    margin: 0;
+}
+
+.tail {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 10px 15px;
+    background-color: var(--primary-color);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--white);
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.user i {
+    font-size: 2.8rem;
+}
+.setting {
+    font-size: 2rem;
+}
+
+@media (max-width: 740px) {
+    .trigger {
+        display: flex;
+    }
+}

@@ -1,6 +1,7 @@
 "use client";
 import { useState, useContext, createContext, cloneElement } from "react";
 import classNames from "classnames/bind";
+import Link from "next/link";
 
 import styles from "./WrapSidebar.module.css";
 
@@ -15,7 +16,7 @@ export default function WrapSidebar({ children }) {
 }
 
 WrapSidebar.Trigger = ({ children }) => {
-    const [isOpen, setIsOpen] = useContext(SidebarContext);
+    const [, setIsOpen] = useContext(SidebarContext);
     return cloneElement(children, {
         onClick: () => setIsOpen(true),
     });
@@ -36,5 +37,18 @@ WrapSidebar.Sidebar = ({ children }) => {
                 {children}
             </aside>
         </div>
+    );
+};
+
+WrapSidebar.Link = ({ children, href, className }) => {
+    const [, setIsOpen] = useContext(SidebarContext);
+    return (
+        <Link
+            href={href}
+            className={className}
+            onClick={() => setIsOpen(false)}
+        >
+            {children}
+        </Link>
     );
 };

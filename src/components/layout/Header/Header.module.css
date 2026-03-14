@@ -186,127 +186,14 @@
 }
 /* header actions : end */
 
-/* header sidebar : start */
-.triggerSidebar {
-    display: none;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--primary-color);
-    border-radius: 50%;
-    width: 36px;
-    height: 36px;
-    cursor: pointer;
-    color: var(--white);
-    font-size: 1.4rem;
+@media (max-width: 740px) {
 }
-.triggerSidebar:hover {
-    background-color: var(--accent-color);
-}
-
-.sidebar {
-    padding: 20px 15px;
-    height: 100%;
-    position: relative;
-}
-.sidebarSearch {
-    display: flex;
-    align-items: center;
-    background-color: var(--surface-color);
-    border-radius: 15px;
-    padding: 0 10px;
-    gap: 10px;
-    color: var(--text-muted);
-    border: 1px solid var(--border-color);
-}
-.sidebarSearch:has(input:focus) {
-    border-color: var(--accent-color);
-}
-.sidebarSearch label i {
-    font-size: 1.8rem;
-    color: var(--text-muted);
-}
-.sidebarSearch input {
-    background-color: transparent;
-    padding: 8px 0;
-    font-size: 1.6rem;
-    flex: 1;
-}
-.sidebarDetailsTrigger {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    cursor: pointer;
-}
-.sidebarDetailsTrigger,
-.sidebarLink {
-    width: 100%;
-    font-size: 1.8rem;
-    padding: 9px 12px;
-    border-radius: 15px;
-    font-weight: 500;
-    margin: 5px 0;
-}
-.sidebarDetailsTrigger:hover,
-.sidebarLink:hover {
-    background-color: var(--surface-color);
-}
-
-.sidebarDetailsContent .sidebarLink {
-    padding: 9px 25px;
-    margin: 0;
-}
-
-.sidebarDetails[open] .angelDown {
-    display: none;
-}
-.sidebarDetails[open] .angelUp {
-    display: contents;
-}
-.sidebarDetailsTrigger .angelUp {
-    display: none;
-}
-.sidebarDetailsTrigger i {
-    font-size: 1.8rem;
-}
-
-.sidebarTail {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    padding: 10px 15px;
-    background-color: var(--primary-color);
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: var(--white);
-}
-
-.sidebarUser {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-.sidebarUser i {
-    font-size: 2.8rem;
-}
-.sidebarSetting {
-    font-size: 2rem;
-}
-
-/* header sidebar : end */
 
 /* responsive */
 
 @media (max-width: 740px) {
     .nav {
         display: none;
-    }
-    .search {
-        display: none;
-    }
-    .triggerSidebar {
-        display: flex;
     }
 
     .header {
@@ -318,6 +205,9 @@
     }
     .header__logo {
         width: 80px;
+    }
+    .search {
+        display: none !important;
     }
 }
 
