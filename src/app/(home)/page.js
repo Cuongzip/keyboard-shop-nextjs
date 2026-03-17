@@ -5,7 +5,6 @@ import { getBanners, getProducts } from "@/services";
 import { Banner, Gallery, Benefits, Articles } from "./components";
 import { Carousel, Reveal } from "@/components";
 import styles from "./Home.module.css";
-import Loading from "../loading";
 
 export const dynamic = "force-dynamic";
 

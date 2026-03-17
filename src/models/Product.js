@@ -15,7 +15,7 @@ const ProductSchema = new mongoose.Schema(
         type: {
             type: String,
             required: true,
-            enum: ["keyboard", "keycap", "switch", "accessory"],
+            enum: ["keyboard", "keycap", "switch", "tool"],
         },
         subtitle: {
             type: String,

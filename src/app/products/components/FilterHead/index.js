@@ -27,6 +27,7 @@ export default function FilterHead({}) {
 
         return `/products?${params.toString()}`;
     };
+
     return (
         <Reveal>
             <div className={cx("head")}>

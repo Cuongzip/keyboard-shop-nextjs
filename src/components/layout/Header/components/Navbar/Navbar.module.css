@@ -1,0 +1,33 @@
+.navList {
+    display: flex;
+}
+.navLink {
+    display: flex;
+    text-align: center;
+    padding: 11px 12px;
+}
+.navLink:hover {
+    color: var(--secondary-text-color);
+}
+.navLink span {
+    margin-right: 3px;
+}
+
+.productDropdown {
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 0;
+}
+.productDropdownLink {
+    display: flex;
+    align-items: center;
+    padding: 8px 13px;
+}
+.productDropdownLink:hover {
+    background-color: var(--surface-hover);
+}
+.productDropdownLink img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}

@@ -29,13 +29,11 @@ export default async function Detail({ params }) {
         <>
             <Reveal>
                 <section className={cx("breadcrumb")}>
-                    <Link href="/">Trang chủ</Link>
-                    &nbsp;/&nbsp;
+                    <Link href="/">Trang chủ</Link> /{" "}
                     <Link href={`/products?type=${product.type}`}>
                         {category}
-                    </Link>
-                    &nbsp;/&nbsp;
-                    <span>{product.name}</span>
+                    </Link>{" "}
+                    / <span>{product.name}</span>
                 </section>
             </Reveal>
             <Reveal>

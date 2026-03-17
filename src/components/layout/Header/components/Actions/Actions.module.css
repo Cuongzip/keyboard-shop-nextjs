@@ -1,0 +1,113 @@
+.actions {
+    display: flex;
+}
+
+.actionIcon {
+    padding: 8px 12px;
+    border-radius: 10px;
+    font-size: 2.7rem;
+    position: relative;
+}
+.actionIcon:hover {
+    background-color: var(--surface-hover);
+}
+
+.actionBadge {
+    font-size: 1rem;
+    color: var(--white);
+    padding: 3px 6px;
+    border-radius: 20px;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    background-color: var(--primary-color);
+}
+
+.userDropdown {
+    padding: 13px;
+}
+
+.userDropdownHead {
+    display: flex;
+    align-items: center;
+}
+.userDropdownHead span {
+    color: var(--secondary-text-color);
+    font-size: 1.3rem;
+}
+.userDropdownLine {
+    height: 0.7px;
+    background-color: var(--border-color);
+    margin: 11px 0;
+}
+.userDropdownLink {
+    padding: 9px 14px;
+    width: 100%;
+    border-radius: 2px;
+}
+.userDropdownLink:hover {
+    background-color: var(--surface-hover);
+}
+
+.cartDropdown {
+    padding: 13px 0;
+    width: 400px;
+}
+.cartDropdownHead {
+    padding: 0 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 1.8rem;
+    color: var(--text-muted);
+}
+.cartDropdownList {
+    height: 246px;
+    overflow-y: auto;
+}
+.cartDropdownLink {
+    width: 100%;
+}
+.productSmall {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px 16px;
+}
+.productSmall:hover {
+    background-color: var(--surface-hover);
+}
+.productSmallLeft {
+    display: flex;
+}
+.productSmallImage {
+    position: relative;
+    width: 85px;
+    height: 60px;
+    overflow: hidden;
+    border-radius: 5px;
+}
+.productSmallImage img {
+    object-fit: cover;
+}
+.productSmallName {
+    font-weight: bold;
+    margin: 0 15px;
+}
+
+.cartDropdownTail {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 16px 0 16px;
+}
+
+@media (max-width: 740px) {
+    .actionUser {
+        display: none;
+    }
+}
+
+@media (max-width: 430px) {
+    .cartDropdown {
+        display: none !important;
+    }
+}

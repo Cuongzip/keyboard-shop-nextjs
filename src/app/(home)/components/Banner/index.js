@@ -27,8 +27,11 @@ export default function Banner({ data }) {
         });
 
         resizeObserverCarousel.observe(carouselEl);
+
+        handleStartAuto();
         return () => {
             resizeObserverCarousel.disconnect();
+            handleStopAuto();
         };
     }, []);
 
@@ -37,12 +40,14 @@ export default function Banner({ data }) {
             if (prev >= data.length - 1) return 0;
             return prev + 1;
         });
+        handleResetAuto();
     };
     const handlePrev = () => {
         setActiveIndex((prev) => {
             if (prev <= 0) return data.length - 1;
             return prev - 1;
         });
+        handleResetAuto();
     };
 
     const clientXRef = useRef(0);
@@ -71,9 +76,25 @@ export default function Banner({ data }) {
         isDragRef.current = 0;
     };
 
+    const intervalID = useRef();
+    const handleStartAuto = () => {
+        intervalID.current = setInterval(() => handleNext(), 5000);
+    };
+    const handleStopAuto = () => {
+        clearInterval(intervalID.current);
+    };
+    const handleResetAuto = () => {
+        handleStopAuto();
+        handleStartAuto();
+    };
+
     return (
         <section ref={carouselRef} className={cx("carousel")}>
-            <div className={cx("slide")}>
+            <div
+                className={cx("slide")}
+                onMouseEnter={handleStopAuto}
+                onMouseLeave={handleStartAuto}
+            >
                 <div className={cx("main")}>
                     <div ref={contentRef} className={cx("content")}>
                         <div key={activeIndex} className={cx("info")}>
@@ -110,10 +131,10 @@ export default function Banner({ data }) {
                     </div>
 
                     <div
+                        className={cx("banner")}
                         onPointerDown={(e) => handlePointerDown(e)}
                         onPointerMove={(e) => handlePointerMove(e)}
                         onPointerUp={(e) => handlePointerUp(e)}
-                        className={cx("banner")}
                     >
                         <Image
                             key={activeIndex}
