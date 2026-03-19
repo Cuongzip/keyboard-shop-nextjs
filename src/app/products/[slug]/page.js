@@ -252,9 +252,9 @@ export default async function Detail({ params }) {
                             <Quantity name="quantity" />
                             <button
                                 className={cx(
+                                    "addToCartBtn",
                                     "button",
                                     "buttonOutline",
-                                    "addToCartBtn",
                                 )}
                             >
                                 <span>Thêm vào giỏ hàng</span>
@@ -262,7 +262,7 @@ export default async function Detail({ params }) {
                             </button>
                         </div>
 
-                        <button className={cx("button", "buyNowBtn", "mt-2")}>
+                        <button className={cx("buyNowBtn", "button", "mt-2")}>
                             <span>Mua ngay</span>
                             <i className="fa-solid fa-money-bill"></i>
                         </button>
