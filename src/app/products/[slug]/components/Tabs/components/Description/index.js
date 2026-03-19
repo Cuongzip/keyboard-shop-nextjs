@@ -15,7 +15,7 @@ export default function Description() {
             </p>
 
             <h3 className="my-1">
-                <b>🔖 Thông tin sản phẩm:</b>
+                <b>Thông tin sản phẩm:</b>
             </h3>
 
             <ul className="ms-3">
